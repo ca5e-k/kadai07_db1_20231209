@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 1200px;
+    font-style: Script;
+    background-color: pink;
+}
+
+#must{
+    /* display: flex; */
+    /* flex-flow: column; */
+    justify-content: center; /* 水平方向の中央配置 */
+    align-items: center; /* 垂直方向の中央配置 */
+    gap: 10px;
+
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* 子要素を縦方向の開始点に揃える */
+    justify-content: space-around; /* 水平方向の間隔を均等にする */
+}
+
+#top div {
+    display: flex; /* 各divもフレックスコンテナにする */
+    flex-direction: column; /* 子要素を縦方向に並べる */
+    margin: 10px; /* 余白を設定 */
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    margin-right: 10px;
+    width: 100px; /* ラベルの幅を固定 */
+}
+
+.form-group input,
+.form-group textarea {
+    flex-grow: 1; /* 入力項目が利用可能なスペースを埋める */
+}

@@ -30,7 +30,7 @@ try {
         $_SESSION['authority'] = $val['authority'];// 権限管理に利用するための変数
         $_SESSION['name']      = $val['name'];// 名前に利用するための変数
         // ここにログイン後のリダイレクト先を記述
-        header('Location: top.php');
+        header('Location: quest.php');
         exit();  // HTML用語禁止!!
     } else {
         // ログイン失敗
