@@ -1,3 +1,27 @@
+$(document).ready(function(){
+  $('#statusselect').change(function(){
+      const formData = {
+          'subject': $('#subjectselect').val(),
+          'shiryo': $('#shiryo').val(),
+          'status': $('#statusselect').val(),
+          'action': $('#actionselect').val(),
+          'title': $('#title').val(),
+          'sodan': $('#sodan').val()
+      };
+      // ここでAJAXを使用してサーバーにデータを送信
+      $.ajax({
+        type: 'POST',
+        url: 'your-server-side-script.php', // PHPスクリプトへのパス
+        data: formData,
+        dataType: 'json',
+        encode: true
+    }).done(function(data){
+        console.log(data); // 応答をログに記録
+    });
+
+  });
+});
+
 $(document).ready(function () {
 
   $('#save').on('click', () => {
@@ -83,18 +107,5 @@ onChildRemoved(dbRef,()=>{
 });
 
 });
-
-// ユーザー情報をデータベースに保存
-// const saveUserData = (userId, name, permissions) => {
-//   const userRef = ref(db, 'users/' + userId);
-//   set(userRef, {
-//     name: name,
-//     permissions: permissions
-//   });
-// };
-
-// ユーザーデータの例
-// saveUserData('clientUserId', 'クライアントユーザー', {"全員": true, "クライアント内": true});
-// saveUserData('auditFirmUserId', '監査法人ユーザー', {"全員": true, "監査法人内": true});
 
 };

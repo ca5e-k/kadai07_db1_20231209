@@ -14,6 +14,7 @@
 <body>
     <form action="quest_db.php" method="post">
         <div>
+            <button type="button" id="save">保存</button>
             <label for="status" style="text-align: center;">ステータス</label>
             <select id="statusselect" style="text-align: center;">
                 <option value="none" id="none">---</option>
@@ -28,7 +29,6 @@
         </div>
 
         <div id='action'>
-            <button type="button" id="save">保存</button>
             <label for="action" style="text-align: center;">アクション</label>
             <select name="actionselect" id="actionselect" style="text-align: center;">
                 <option value="none" id="none">---</option>

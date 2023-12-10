@@ -2,18 +2,17 @@
 
 session_start();
 
-
-
+// your-server-side-script.php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $subject = $_POST['subjectselect'];
-    $shiryo = $_FILES['shiryo']['name']; // ファイルの場合は $_FILES を使用
-    $time = $_POST['date'];
-    $status = $_POST['statusselect'];
-    $action = $_POST['actionselect'];
+    // AJAXから送信されたデータを受け取る
+    $subject = $_POST['subject'];
+    $shiryo = $_POST['shiryo'];
+    $status = $_POST['status'];
+    $action = $_POST['action'];
     $title = $_POST['title'];
-    $sodan = $_POST['question'];
+    $sodan = $_POST['sodan'];
 
-    // データベース接続とデータ登録のロジック
-    // ここにPDOを使用したデータベース接続とINSERT文を記述
+    // ここでデータベース接続とINSERTまたはUPDATE処理
+    // ...
 }
 ?>
