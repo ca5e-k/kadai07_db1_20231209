@@ -51,6 +51,14 @@
         </div>
 
         <div>
+            <form action="file_up.php" method="post" enctype="multipart/form-data">
+                <label for="fileUpload">ファイルを選択:</label>
+                <input type="file" name="fileUp" id="file">
+                <input type="submit" value="アップロード">
+            </form>
+        </div>
+
+        <div>
             <div class="title">
                 <label for="title" style="text-align: center;">タイトル</label>
                 <input type="text" id="title" required>

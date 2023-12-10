@@ -1,29 +1,3 @@
-// ユニークIDを生成する関数
-function generateUniqueId() {
-    // ランダムな文字列を生成するための関数
-    const randomString = (length, chars) => {
-        let result = '';
-        for (let i = length; i > 0; --i) {
-            result += chars[Math.floor(Math.random() * chars.length)];
-        }
-        return result;
-    }
-
-    // 使用する文字のセット
-    const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-    // 8文字のランダムな文字列と現在のタイムスタンプを結合してIDを生成
-    const uniqueId = randomString(8, chars) + '-' + Date.now();
-
-    return uniqueId;
-}
-
-// 使用例
-const uniqueId = generateUniqueId();
-console.log(uniqueId); // コンソールに生成されたユニークIDを表示
-
-
-
 // アクションタブを更新することによる動作
 $("#actionselect").on("change", function () {
     if (this.value === "seiri") {
@@ -90,5 +64,36 @@ $("#actionselect").on("change", function () {
         `;
     }
 });
+
+
+
+
+
+
+
+
+// // ユニークIDを生成する関数
+// function generateUniqueId() {
+//     // ランダムな文字列を生成するための関数
+//     const randomString = (length, chars) => {
+//         let result = '';
+//         for (let i = length; i > 0; --i) {
+//             result += chars[Math.floor(Math.random() * chars.length)];
+//         }
+//         return result;
+//     }
+
+//     // 使用する文字のセット
+//     const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+//     // 8文字のランダムな文字列と現在のタイムスタンプを結合してIDを生成
+//     const uniqueId = randomString(8, chars) + '-' + Date.now();
+
+//     return uniqueId;
+// }
+
+// // 使用例
+// const uniqueId = generateUniqueId();
+// console.log(uniqueId); // コンソールに生成されたユニークIDを表示
 
 

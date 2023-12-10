@@ -6,7 +6,7 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // AJAXから送信されたデータを受け取る
     $subject = $_POST['subject'];
-    $shiryo = $_POST['shiryo'];
+    $file = $_POST['file'];
     $status = $_POST['status'];
     $action = $_POST['action'];
     $title = $_POST['title'];

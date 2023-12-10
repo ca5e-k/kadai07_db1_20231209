@@ -1,22 +1,22 @@
-$(document).ready(function(){
-  $('#statusselect').change(function(){
-      const formData = {
-          'subject': $('#subjectselect').val(),
-          'shiryo': $('#shiryo').val(),
-          'status': $('#statusselect').val(),
-          'action': $('#actionselect').val(),
-          'title': $('#title').val(),
-          'sodan': $('#sodan').val()
-      };
-      // ここでAJAXを使用してサーバーにデータを送信
-      $.ajax({
-        type: 'POST',
-        url: 'your-server-side-script.php', // PHPスクリプトへのパス
-        data: formData,
-        dataType: 'json',
-        encode: true
-    }).done(function(data){
-        console.log(data); // 応答をログに記録
+$(document).ready(function () {
+  $('#statusselect').change(function () {
+    const formData = {
+      'subject': $('#subjectselect').val(),
+      'file': $('#file').val(),
+      'status': $('#statusselect').val(),
+      'action': $('#actionselect').val(),
+      'title': $('#title').val(),
+      'sodan': $('#sodan').val()
+    };
+    // ここでAJAXを使用してサーバーにデータを送信
+    $.ajax({
+      type: 'POST',
+      url: 'quest_db.php', // PHPスクリプトへのパス
+      data: formData,
+      dataType: 'json',
+      encode: true
+    }).done(function (data) {
+      console.log(data); // 応答をログに記録
     });
 
   });
@@ -26,18 +26,11 @@ $(document).ready(function () {
 
   $('#save').on('click', () => {
     const subject = $('#subjectselect').val();
+    const file = $('#file').val();
     const status = $('#statusselect').val();
+    const action = $('#actionselect').val();
     const title = $('#title').val();
     const sodan = $('#sodan').val();
-
-    const newPostRef = push(dbRef);
-    set(newPostRef, {
-      kamoku: kamoku,
-      date: date,
-      status: status,
-      title: title,
-      sodan: sodan,
-    });
   })
 
   $(document).on('click', '#delete', function () {
@@ -46,11 +39,6 @@ $(document).ready(function () {
     }
   });
 
-});
-
-onChildAdded(dbRef,function(data){
-  const questions = data.val();
-  const key =data.key;//削除・更新に必須!!プロパティを取得するのに必要
 });
 
 // アクションタブを更新することによる動作
@@ -95,17 +83,3 @@ $("#actionselect").on("change", function () {
       `;
   }
 });
-
-function displayonoff(){
-const userpermissions=aaa;
-
-onChildAdded(dbRef,(snapshot)=>{
-const content=snapshot.val();
-
-onChildRemoved(dbRef,()=>{
-  $(''+data.key).remove();
-});
-
-});
-
-};
